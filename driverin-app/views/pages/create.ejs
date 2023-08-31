@@ -1,0 +1,25 @@
+<form action="api/car" method="POST">
+    <label for="vin">VIN:</label>
+    <input type="text" id="vin" name="vin" required>
+
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year" required>
+
+    <label for="rentalFee">Rental Fee:</label>
+    <input type="number" id="rentalFee" name="rentalFee" required>
+
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" required>
+
+    <label for="make">Make:</label>
+    <input type="text" id="make" name="make" required>
+
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+        <option value="">--Please choose an option--</option>
+        <option value="available">Available</option>
+        <option value="maintenance">Maintenance</option>
+    </select>
+
+    <input type="submit" value="Submit">
+</form>

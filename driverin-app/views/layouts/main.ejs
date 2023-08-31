@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title><%- title %></title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <nav class="navbar">
+            <div class="logo menu"><a href="/">Driverin</a></div>
+            <div class="menu"><a href="/create">create car</a></div>
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="VIN">
+                <button class="search-button" onclick="searchCar()">search</button>
+            </div>
+        </nav>
+
+        <div class="content">
+            <!-- Konten halaman -->
+            <%- body %>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <p>Copyright © 2023 - All right reserved Rico - PT. Kode Rantai Pintar</p>
+    </footer>
+
+    <script>
+        function searchCar() {
+            var input = document.getElementById("search-input").value;
+            if (input) {
+                window.location.href = "/" + input;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

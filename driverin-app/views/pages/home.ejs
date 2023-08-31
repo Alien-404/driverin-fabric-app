@@ -1,0 +1,30 @@
+<h1>List Card : </h1>
+
+
+<div class="card-row">
+
+    <% if (cars.length> 0) { %>
+        <% cars.forEach(car=> { %>
+            <a href="/<%= car.VIN %>">
+                <div class="card">
+                    <h3>
+                        <%= car.make %>
+                            <%= car.model %>
+                                <em>
+                                    <%= car.status %>
+                                </em>
+                    </h3>
+                    <p>VIN: <%= car.VIN %>
+                    </p>
+                    <p>Year: <%= car.year %>
+                    </p>
+                    <p>Rental Fee: IDR.<%= car.rentalFee %>
+                    </p>
+                </div>
+            </a>
+            <% }); %>
+                <% } else { %>
+                    <p>No Car Found</p>
+                    <% } %>
+
+</div>
