@@ -1,45 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title><%- title %></title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- End Fonts -->
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <nav class="navbar">
-            <div class="logo menu"><a href="/">Driverin</a></div>
-            <div class="menu"><a href="/create">create car</a></div>
-            <div class="search-container">
-                <input type="text" id="search-input" class="search-input" placeholder="VIN">
-                <button class="search-button" onclick="searchCar()">search</button>
+    <header>
+        <nav
+            class="w-full py-5 px-8 bg-[#5266EB] flex justify-between items-center flex-col space-y-5 md:space-y-0 md:flex-row">
+            <div class="flex items-center">
+                <a href="/">
+                    <h1 class="text-white text-lg font-[700]">Driverin</h1>
+                </a>
+                <span class="mx-2 text-white text-lg ">|</span>
+                <a href="/create">
+                    <h1 class="text-white text-lg font-[500]">Create Car</h1>
+                </a>
+            </div>
+
+
+            <div>
+                <div class="flex items-center">
+                    <label for="voice-search" class="sr-only">Search</label>
+                    <div class="relative w-full">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="text" id="voice-search"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
+                            placeholder="VIN NUMBER" required>
+                    </div>
+                    <button type="submit" onclick="searchCar()"
+                        class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                        <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>Search
+                    </button>
+                </div>
             </div>
         </nav>
-
-        <div class="content">
-            <!-- Konten halaman -->
-            <%- body %>
-        </div>
-    </div>
+    </header>
 
 
-    <footer class="footer">
-        <p>Copyright © 2023 - All right reserved Rico - PT. Kode Rantai Pintar</p>
-    </footer>
 
-    <script>
-        function searchCar() {
-            var input = document.getElementById("search-input").value;
-            if (input) {
-                window.location.href = "/" + input;
+    <!-- content -->
+    <%- body %>
+
+
+
+        <script>
+            function searchCar() {
+                var input = document.getElementById("voice-search").value;
+                if (input) {
+                    window.location.href = "/" + input;
+                }
             }
-        }
-    </script>
-
+        </script>
 </body>
 
 </html>

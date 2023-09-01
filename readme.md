@@ -70,7 +70,7 @@ npm start
 ```
 
 ### Note
-This example serves as a foundational understanding of Hyperledger Fabric and its implementation. For further inquiries, please reach out to: rico@smartchaincode.com
+This example serves as a foundational understanding of Hyperledger Fabric and its implementation. For further inquiries, please reach out to: rico@smartchaincode.com. CC for frontend to : nico@smartchaincode.com
 
 ---
 

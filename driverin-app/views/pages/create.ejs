@@ -1,25 +1,70 @@
-<form action="api/car" method="POST">
-    <label for="vin">VIN:</label>
-    <input type="text" id="vin" name="vin" required>
+<main class="p-8">
 
-    <label for="year">Year:</label>
-    <input type="number" id="year" name="year" required>
+    <h1 class="font-[700] text-[#412B5F] text-2xl mb-8 text-center">Create New Car</h1>
+    <div class="grid grid-cols-12 gap-5">
 
-    <label for="rentalFee">Rental Fee:</label>
-    <input type="number" id="rentalFee" name="rentalFee" required>
+        <!-- Card -->
+        <div class="col-span-12 md:col-start-4 md:col-span-6 rounded-lg drop-shadow-md bg-white flex w-full p-8">
 
-    <label for="model">Model:</label>
-    <input type="text" id="model" name="model" required>
+            <form class="w-full" action="api/car" method="POST">
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
 
-    <label for="make">Make:</label>
-    <input type="text" id="make" name="make" required>
+                    <!-- VIN -->
+                    <div>
+                        <label for="vin" class="block mb-2 text-sm font-medium text-gray-900">VIN</label>
+                        <input type="text" name="vin" id="vin"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="0172883028209" required>
+                    </div>
 
-    <label for="status">Status:</label>
-    <select id="status" name="status">
-        <option value="">--Please choose an option--</option>
-        <option value="available">Available</option>
-        <option value="maintenance">Maintenance</option>
-    </select>
+                    <!-- Year -->
+                    <div>
+                        <label for="year" class="block mb-2 text-sm font-medium text-gray-900">Year</label>
+                        <input type="number" name="year" id="year"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="2020" required>
+                    </div>
 
-    <input type="submit" value="Submit">
-</form>
+                    <!-- Rental Fee -->
+                    <div>
+                        <label for="rentalFee" class="block mb-2 text-sm font-medium text-gray-900">Rental
+                            Fee</label>
+                        <input type="text" name="rentalFee" id="rentalFee"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="300000" required>
+                    </div>
+
+                    <!-- Model -->
+                    <div>
+                        <label for="model" class="block mb-2 text-sm font-medium text-gray-900">Model</label>
+                        <input type="text" name="model" id="model"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="Camry" required>
+                    </div>
+                </div>
+
+                <!-- Make -->
+                <div class="mb-6">
+                    <label for="make" class="block mb-2 text-sm font-medium text-gray-900">Make</label>
+                    <input type="text" name="make" id="make"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        placeholder="Toyota" required>
+                </div>
+                <div class="mb-6">
+                    <label for="status" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
+                    <select id="status" name="status"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="available" selected>Available</option>
+                        <option value="maintenance">Maintenance</option>
+                    </select>
+                </div>
+                <button type="submit" value="submit"
+                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Add
+                    Data</button>
+            </form>
+
+        </div>
+        <!-- End Card -->
+
+    </div>
+</main>

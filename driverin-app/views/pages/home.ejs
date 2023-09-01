@@ -1,30 +1,49 @@
-<h1>List Card : </h1>
+<main class="p-8">
+    <div class="grid grid-cols-12 gap-5">
 
-
-<div class="card-row">
-
-    <% if (cars.length> 0) { %>
-        <% cars.forEach(car=> { %>
-            <a href="/<%= car.VIN %>">
-                <div class="card">
-                    <h3>
-                        <%= car.make %>
-                            <%= car.model %>
-                                <em>
-                                    <%= car.status %>
-                                </em>
-                    </h3>
-                    <p>VIN: <%= car.VIN %>
-                    </p>
-                    <p>Year: <%= car.year %>
-                    </p>
-                    <p>Rental Fee: IDR.<%= car.rentalFee %>
-                    </p>
+        <% if (cars.length> 0) { %>
+            <% cars.forEach(car=> { %>
+                <!-- Card -->
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 rounded-lg drop-shadow-md bg-white flex">
+                    <div class="w-[10px] h-full bg-[#5266EB] mr-4 rounded-l-lg"></div>
+                    <div class="py-5 pr-5 w-full h-fit">
+                        <div class="flex w-full h-fit justify-between items-center mb-6">
+                            <h5 class="font-[700] text-[#412B5F] text-xl">
+                                <%= car.make %>
+                                    <%= car.model %>
+                            </h5>
+                            <h5 class="font-[600] bg-[#EDDFFD] text-[#685287] p-2 text-sm rounded-md">
+                                <%= car.status %>
+                            </h5>
+                        </div>
+                        <div>
+                            <div class="flex w-full space-x-3">
+                                <h6 class="font-[500]">VIN:</h6>
+                                <h6 class="font-[300]">
+                                    <%= car.VIN %>
+                                </h6>
+                            </div>
+                            <div class="flex w-full space-x-3">
+                                <h6 class="font-[500]">Year:</h6>
+                                <h6 class="font-[300]">
+                                    <%= car.year %>
+                                </h6>
+                            </div>
+                            <div class="flex w-full space-x-3">
+                                <h6 class="font-[500]">Rental Fee:</h6>
+                                <h6 class="font-[300]">IDR. <%= car.rentalFee %>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <% }); %>
-                <% } else { %>
-                    <p>No Car Found</p>
-                    <% } %>
+                <!-- End Card -->
+                <% }); %>
+                    <% } else { %>
+                        <p>No Car Found</p>
+                        <% } %>
 
-</div>
+
+
+    </div>
+</main>

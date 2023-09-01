@@ -1,10 +1,43 @@
-<div class="card">
-    <h3>
-        <%- car.make %> <%- car.model %>
-                <em><%- car.status %> </em>
-    </h3>
-    <p>VIN: <%- car.VIN %> </p>
-    <p>Year: <%- car.year %> </p>
-    <p>Rental Fee: IDR. <%- car.rentalFee %> </p>
-    <a href="/" class="back-link">Back to List</a>
-</div>
+<main class="p-8">
+
+    <h1 class="font-[700] text-[#412B5F] text-2xl mb-8">Search Result</h1>
+    <div class="grid grid-cols-12 gap-5">
+
+        <!-- Card -->
+        <div class="col-span-12 md:col-span-8  rounded-lg drop-shadow-md bg-white flex">
+            <div class="w-[10px] h-full bg-[#5266EB] mr-4 rounded-l-lg"></div>
+            <div class="py-5 pr-5 w-full h-fit">
+                <div class="flex w-full h-fit justify-between items-center mb-6">
+                    <h5 class="font-[700] text-[#412B5F] text-xl">
+                        <%= car.make %>
+                            <%= car.model %>
+                    </h5>
+                    <h5 class="font-[600] bg-[#EDDFFD] text-[#685287] p-2 text-sm rounded-md">
+                        <%= car.status %>
+                    </h5>
+                </div>
+                <div>
+                    <div class="flex w-full space-x-3">
+                        <h6 class="font-[500]">VIN:</h6>
+                        <h6 class="font-[300]">
+                            <%= car.VIN %>
+                        </h6>
+                    </div>
+                    <div class="flex w-full space-x-3">
+                        <h6 class="font-[500]">Year:</h6>
+                        <h6 class="font-[300]">
+                            <%= car.year %>
+                        </h6>
+                    </div>
+                    <div class="flex w-full space-x-3">
+                        <h6 class="font-[500]">Rental Fee:</h6>
+                        <h6 class="font-[300]">IDR. <%= car.rentalFee %>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Card -->
+
+    </div>
+</main>
