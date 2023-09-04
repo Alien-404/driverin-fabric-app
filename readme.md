@@ -33,7 +33,7 @@ Execute the following command to initiate the network and create a channel using
 Deploy the chaincode to the network using this command:
 
 ```sh
-./network.sh deployCC -ccn rentalchaincode -ccp ../asset-test-js/chaincode-js/ -ccv 1 -ccl javascript -cci initLedger -c rental
+./network.sh deployCC -ccn rentalchaincode -ccp ../driverin-fabric-app/chaincode-js/ -ccv 1 -ccl javascript -cci initLedger -c rental
 ```
 
 ![success example](images/deploy-chaincode.png)
